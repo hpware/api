@@ -2,5 +2,11 @@
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
-  modules: ['@nuxtjs/robots']
+  modules: ['@nuxtjs/robots'],
+
+  routeRules: {
+    '/': {prerender: true},
+    '/app/**': {ssr: true},
+    '/api/**': {ssr:true},
+  }
 })
