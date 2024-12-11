@@ -5,9 +5,8 @@ export default defineNuxtConfig({
   modules: ['@nuxtjs/robots', 'nuxt-umami'],
 
   routeRules: {
-    '/': {prerender: true},
-    '/app/**': {cors: true},
-    '/api/**': {cors:true},
+    '/': { prerender: true },
+    '/api/**': { cors: true },
   },
   umami: {
     enabled: true,
