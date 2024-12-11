@@ -1,10 +1,10 @@
 <script setup lang="ts">
 useHead({
-  title: 'API Lander'
+  title: 'API'
 })
 </script>
 <template>
   <div>
-  This is an API endpoint.
+    <NuxtPage/>
   </div>
 </template>
