@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const error = useError();
 useHead({
-  title: '系統錯誤',
+  title: '系統錯誤 | API 服務',
 })
 
 </script>
