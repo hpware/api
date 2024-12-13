@@ -1,16 +1,16 @@
 <script setup lang="ts">
+const error = useError();
 useHead({
-  title: 'API Lander',
+  title: '系統錯誤',
 })
 
 </script>
 <template>
     <NuxtLayout>
       <div>
-        <h1 class="errorcodes">API 服務</h1>
-        <h2>關於此平台： <a href="https://mdviewer.yuanhau.com/?u=https://api.yuanhau.com/files/about-api.md"></a></h2>
+        <h1 class="errorcodes">錯誤: {{ error.statusCode }}</h1>
+        <h3>錯誤訊息: {{ error.message }}</h3>
         <p>管理員/開發者信箱: <a href="mailto:hw@yuanhau.com">hw@yuanhau.com</a></p>
-        <h3>Powered by Nuxt + Typescript</h3>
       </div>
     </NuxtLayout>
 </template>
