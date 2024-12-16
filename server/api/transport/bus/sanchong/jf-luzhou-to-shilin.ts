@@ -1,6 +1,6 @@
 export default defineEventHandler(() =>{
     throw createError({
-        statusCode: 500,
-        statusMessage: '服務無法被使用!'
+        statusCode: 403,
+        statusMessage: "找不到API :'("
       })
 })
