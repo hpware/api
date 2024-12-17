@@ -23,8 +23,11 @@ export default defineEventHandler(async (event) =>{
         try {
             const data = await BUS();
             return {
-                data: data
-            }
+                bus: {
+                    stopname: data.StopName.En,
+                    route: data.RouteName.En,
+                    srcupdatetime: data.SrcUpdateTime
+                }            }
         } catch (e) {
             throw createError({
                 statusCode: 500,
