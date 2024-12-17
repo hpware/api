@@ -12,7 +12,8 @@ const obtainData = async() => {
         const res = await fetch(url,
             {
                 headers: {
-                Authorization: `Bearer ${token}`
+                    Authorization: `Bearer ${token}`,
+                    'Content-Encoding': 'gzip',
                 }
             });
             return res.json();
