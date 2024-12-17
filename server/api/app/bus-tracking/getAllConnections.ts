@@ -1,5 +1,5 @@
 import obtainToken from "~/server/components/loadTDXToken";
-const urls = [ "https://tdx.transportdata.tw/api/basic/v2/Bus/EstimatedTimeOfArrival/City/Taipei/%E7%B4%859?%24top=1&%24skip=21&%24format=JSON",
+const urls = ["https://tdx.transportdata.tw/api/basic/v2/Bus/EstimatedTimeOfArrival/City/Taipei/%E7%B4%859?%24top=1&%24skip=21&%24format=JSON",
     "https://tdx.transportdata.tw/api/basic/v2/Bus/EstimatedTimeOfArrival/City/Taipei/508?%24top=1&%24skip=228&%24format=JSON",
     "https://tdx.transportdata.tw/api/basic/v2/Bus/EstimatedTimeOfArrival/City/NewTaipei/815?%24top=1&%24skip=118&%24format=JSON",
     "https://tdx.transportdata.tw/api/basic/v2/Bus/EstimatedTimeOfArrival/City/NewTaipei/816?%24top=1&%24skip=85&%24format=JSON",
@@ -22,7 +22,5 @@ const obtainData = async() => {
 
 export default defineEventHandler(async(event) => {
     const data = await obtainData();
-    return {
-        body: JSON.stringify(data)
-    };
+    return data;
 });
