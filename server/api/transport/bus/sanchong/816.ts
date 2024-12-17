@@ -3,7 +3,7 @@ import getToken from "~/server/components/loadTDXToken";
 const BUS = async () =>{
     const token = await getToken();
     try {
-        const api = await fetch("https://tdx.transportdata.tw/api/basic/v2/Bus/EstimatedTimeOfArrival/City/Taipei/508%E5%8D%80?%24top=1&%24skip=69&%24format=JSON",
+        const api = await fetch("https://tdx.transportdata.tw/api/basic/v2/Bus/EstimatedTimeOfArrival/City/NewTaipei/816?%24top=1&%24skip=85&%24format=JSON",
             {
                headers: {
                     Authorization: `Bearer ${token}`,
@@ -20,13 +20,14 @@ const BUS = async () =>{
 export default defineEventHandler(async (event) =>{
     if (event.node.req.method === 'POST' || event.node.req.method === 'GET') {
         try {
-            const data = await BUS();
+            const data = await API508();
             return {
                 bus: {
-                    stopname: data.StopName.En,
-                    route: data.RouteName.En,
+                    stopname: data.StopName,
+                    route: data.RouteName,
                     srcupdatetime: data.SrcUpdateTime
-                }            }
+                }
+            }
         } catch (e) {
             throw createError({
                 statusCode: 500,
