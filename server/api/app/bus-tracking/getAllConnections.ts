@@ -19,4 +19,10 @@ const obtainData = async() => {
     }));
     return obtainData;
 }
-console.log(obtainData());
+
+export default defineEventHandler(async(event) => {
+    const data = await obtainData();
+    return {
+        body: JSON.stringify(data)
+    };
+});
