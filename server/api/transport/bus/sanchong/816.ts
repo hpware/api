@@ -1,9 +1,10 @@
 import getToken from "~/server/components/loadTDXToken";
+const url = "https://tdx.transportdata.tw/api/basic/v2/Bus/EstimatedTimeOfArrival/City/NewTaipei/816?%24top=1&%24skip=85&%24format=JSON"
 
 const BUS = async () =>{
     const token = await getToken();
     try {
-        const api = await fetch("https://tdx.transportdata.tw/api/basic/v2/Bus/EstimatedTimeOfArrival/City/NewTaipei/816?%24top=1&%24skip=85&%24format=JSON",
+        const api = await fetch(url,
             {
                headers: {
                     Authorization: `Bearer ${token}`,
@@ -20,10 +21,8 @@ const BUS = async () =>{
 export default defineEventHandler(async (event) =>{
     if (event.node.req.method === 'POST' || event.node.req.method === 'GET') {
         try {
-            const data = await API508();
-            return {
-                data: data
-            }
+            const data = await BUS();
+            return data;
         } catch (e) {
             throw createError({
                 statusCode: 500,
