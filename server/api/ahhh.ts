@@ -8,14 +8,7 @@ function write(data: string) {
     ]);
 }
 export default defineEventHandler(async (event) => {
-        try {
             write(urls);
             const {data} = await supabase.from("ahhh").select();
             return data;
-        } catch (e) {
-            throw createError({
-                statusCode: 500,
-                statusMessage: '伺服器或資料庫錯誤!'
-              })
-        }
 })
