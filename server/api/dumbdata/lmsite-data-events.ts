@@ -8,7 +8,7 @@ export default defineEventHandler((event) => {
           name: "2025",
           date: "2025-05-21",
           dmImage: "#",
-          link: "data",
+          link: "/eventDetails/data",
         },
         {
           item: 1,
