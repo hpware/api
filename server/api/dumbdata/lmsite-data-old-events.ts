@@ -17,6 +17,20 @@ export default defineEventHandler((event) => {
             dmImage: "https://images.unsplash.com/photo-1721100152646-1bbfeb581505",
             link: "#"
         },
+        {
+            item: 2,
+            name: "4scd",
+            year: 2022,
+            dmImage: "https://images.unsplash.com/photo-1721100152646-1bbfeb581505",
+            link: "#"
+        },
+        {
+            item: 3,
+            name: "wfecs",
+            year: 2025,
+            dmImage: "https://images.unsplash.com/photo-1721100152646-1bbfeb581505",
+            link: "#"
+        },
       ]
     }
   });
